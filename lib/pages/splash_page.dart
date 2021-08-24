@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare/pages/login_page.dart';
+import 'package:healthcare/pages/signup_page.dart';
 import 'package:healthcare/theme.dart';
 
 class SplashPage extends StatelessWidget {
@@ -45,7 +46,16 @@ class SplashPage extends StatelessWidget {
                   height: 42,
                   width: double.infinity,
                   child: FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return SignupPage();
+                          },
+                        ),
+                      );
+                    },
                     child: Text(
                       'Sign Up',
                       style: buttonTwo.copyWith(
