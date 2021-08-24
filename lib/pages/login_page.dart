@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:healthcare/pages/login_page.dart';
 import 'package:healthcare/theme.dart';
+import 'package:healthcare/widget/text_field_and_label.dart';
 
-class SplashPage extends StatelessWidget {
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: whiteColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -16,7 +17,7 @@ class SplashPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Welcome to',
+                  'Welcome Back',
                   style: headingFive.copyWith(
                     color: primaryOne,
                   ),
@@ -25,21 +26,49 @@ class SplashPage extends StatelessWidget {
                   height: 4,
                 ),
                 Text(
-                  'Self Care',
+                  'Login',
                   style: headingThree.copyWith(
                     color: primaryOne,
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 28,
                 ),
                 Image.asset(
                   'assets/illustration.png',
                   width: double.infinity,
-                  height: 320,
+                  height: 230,
                 ),
                 SizedBox(
-                  height: 46,
+                  height: 24,
+                ),
+                TextFieldAndLabel(
+                  placeholder: 'Email',
+                  isPassword: false,
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                TextFieldAndLabel(
+                  placeholder: 'Password',
+                  isPassword: true,
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      'Forgot Password?',
+                      style: paragraphTwo.copyWith(
+                        color: primaryOne,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 24,
                 ),
                 Container(
                   height: 42,
@@ -47,7 +76,7 @@ class SplashPage extends StatelessWidget {
                   child: FlatButton(
                     onPressed: () {},
                     child: Text(
-                      'Sign Up',
+                      'Login',
                       style: buttonTwo.copyWith(
                         color: whiteColor,
                       ),
@@ -59,39 +88,24 @@ class SplashPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 16,
+                  height: 24,
                 ),
-                Container(
-                  height: 42,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(
-                      color: primaryOne,
+                Text.rich(
+                  TextSpan(
+                    text: 'Don’t have an account?  ',
+                    style: paragraphTwo.copyWith(
+                      color: primaryFour,
                     ),
-                  ),
-                  child: FlatButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return LoginPage();
-                          },
+                    children: [
+                      TextSpan(
+                        text: 'Sign Up',
+                        style: paragraphTwo.copyWith(
+                          color: primaryOne,
                         ),
-                      );
-                    },
-                    child: Text(
-                      'Login',
-                      style: buttonTwo.copyWith(
-                        color: primaryOne,
-                      ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+                      )
+                    ],
                   ),
-                )
+                ),
               ],
             ),
           ),
