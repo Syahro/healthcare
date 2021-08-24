@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare/pages/login_page.dart';
+import 'package:healthcare/pages/no_connection_page.dart';
 import 'package:healthcare/pages/signup_page.dart';
 import 'package:healthcare/theme.dart';
 
@@ -52,6 +53,16 @@ class SplashPage extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) {
                             return SignupPage();
+                          },
+                        ),
+                      );
+                    },
+                    onLongPress: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return NoConnectionPage();
                           },
                         ),
                       );
