@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare/pages/details_page.dart';
+import 'package:healthcare/pages/empty_details_page.dart';
 import 'package:healthcare/theme.dart';
 import 'package:healthcare/widget/home_cate_card.dart';
 
@@ -44,6 +45,16 @@ class HomePage extends StatelessWidget {
                   height: 16,
                 ),
                 InkWell(
+                  onDoubleTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return EmptyDetailsPage();
+                        },
+                      ),
+                    );
+                  },
                   onTap: () {
                     Navigator.push(
                       context,
