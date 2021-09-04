@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:healthcare/pages/home_page.dart';
+import 'package:healthcare/pages/settings_page.dart';
 import 'package:healthcare/theme.dart';
 
 class FloatingMenu extends StatelessWidget {
@@ -37,11 +39,23 @@ class FloatingMenu extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/home.png',
-              width: 24,
-              height: 24,
-              color: isHome ? inkOne : inkFour.withOpacity(0.7),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return HomePage();
+                    },
+                  ),
+                );
+              },
+              child: Image.asset(
+                'assets/home.png',
+                width: 24,
+                height: 24,
+                color: isHome ? inkOne : inkFour.withOpacity(0.7),
+              ),
             ),
             Image.asset(
               'assets/chart.png',
@@ -55,11 +69,23 @@ class FloatingMenu extends StatelessWidget {
               height: 24,
               color: isNotif ? inkOne : inkFour.withOpacity(0.7),
             ),
-            Image.asset(
-              'assets/setting.png',
-              width: 24,
-              height: 24,
-              color: isSetting ? inkOne : inkFour.withOpacity(0.7),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SettingsPage();
+                    },
+                  ),
+                );
+              },
+              child: Image.asset(
+                'assets/setting.png',
+                width: 24,
+                height: 24,
+                color: isSetting ? inkOne : inkFour.withOpacity(0.7),
+              ),
             ),
           ],
         ),
