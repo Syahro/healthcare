@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthcare/pages/details_page.dart';
 import 'package:healthcare/theme.dart';
 import 'package:healthcare/widget/home_cate_card.dart';
 
@@ -42,9 +43,21 @@ class HomePage extends StatelessWidget {
                 SizedBox(
                   height: 16,
                 ),
-                HomeCateCard(
-                  title: 'Medical History',
-                  imageUrl: 'assets/cate2.png',
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return DetailsPage();
+                        },
+                      ),
+                    );
+                  },
+                  child: HomeCateCard(
+                    title: 'Medical History',
+                    imageUrl: 'assets/cate2.png',
+                  ),
                 ),
                 SizedBox(
                   height: 16,
