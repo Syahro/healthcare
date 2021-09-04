@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthcare/pages/home_page.dart';
 import 'package:healthcare/theme.dart';
 import 'package:healthcare/widget/text_field_and_label.dart';
 
@@ -74,7 +75,16 @@ class LoginPage extends StatelessWidget {
                   height: 42,
                   width: double.infinity,
                   child: FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HomePage();
+                          },
+                        ),
+                      );
+                    },
                     child: Text(
                       'Login',
                       style: buttonTwo.copyWith(
