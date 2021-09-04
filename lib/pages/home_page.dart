@@ -2,12 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:healthcare/pages/details_page.dart';
 import 'package:healthcare/pages/empty_details_page.dart';
 import 'package:healthcare/theme.dart';
+import 'package:healthcare/widget/floating_menu.dart';
 import 'package:healthcare/widget/home_cate_card.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingMenu(
+        isHome: true,
+        isChart: false,
+        isNotif: false,
+        isSetting: false,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: ListView(
         children: [
           Padding(
