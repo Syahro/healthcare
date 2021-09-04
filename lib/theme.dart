@@ -13,6 +13,9 @@ Color primarySix = Color(0XFFEDECF4);
 Color yellowColor = Color(0XFFFEC62F);
 Color redColor = Color(0XFFEB5858);
 Color blueColor = Color(0XFF29C9FB);
+Color inkOne = Color(0XFF432C81);
+Color greyColor = Color(0XFFE0DDEA);
+Color darkGreyColor = Color(0XFF82799D);
 
 TextStyle headingOne = GoogleFonts.raleway(
   fontSize: 56,
