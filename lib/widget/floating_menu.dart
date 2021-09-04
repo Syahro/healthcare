@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare/pages/home_page.dart';
+import 'package:healthcare/pages/notification_page.dart';
 import 'package:healthcare/pages/settings_page.dart';
 import 'package:healthcare/theme.dart';
 
@@ -63,11 +64,23 @@ class FloatingMenu extends StatelessWidget {
               height: 24,
               color: isChart ? inkOne : inkFour.withOpacity(0.7),
             ),
-            Image.asset(
-              'assets/notif.png',
-              width: 24,
-              height: 24,
-              color: isNotif ? inkOne : inkFour.withOpacity(0.7),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return NotificationPage();
+                    },
+                  ),
+                );
+              },
+              child: Image.asset(
+                'assets/notif.png',
+                width: 24,
+                height: 24,
+                color: isNotif ? inkOne : inkFour.withOpacity(0.7),
+              ),
             ),
             InkWell(
               onTap: () {
